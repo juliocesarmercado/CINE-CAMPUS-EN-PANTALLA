@@ -1,0 +1,47 @@
+# Acta de Responsabilidad
+
+**Proyecto:** Cinema Universitario 
+**Universidad de Antioquia 2025-2 – Facultad de Ingeniería**  
+**Curso:** Algoritmia y Programación  
+**Profesor:** John Heider Dávila 
+
+
+## 1. Objetivo del acta
+Definir las responsabilidades específicas de cada integrante del equipo, asignando tareas claras y plazos de entrega, con el fin de garantizar el cumplimiento de los objetivos del proyecto de manera organizada y equitativa.
+
+
+## 2. Responsabilidades generales
+- Todos los integrantes deben participar activamente en el desarrollo del proyecto.  
+- El cumplimiento de cada tarea será revisado en las reuniones semanales.  
+- Si un integrante no puede cumplir con una tarea, debe informar con anticipación para redistribuirla.  
+
+
+## 3. Asignación de tareas
+| Integrante | Rol / Responsabilidad principal | Entregables asociados |
+|------------|---------------------------------|------------------------|
+| **Julio Cesar Mercado Negrete** | Líder de proyecto, encargado de GitHub y versionado. | Repositorio, plan de versionado, integración de entregables. |
+| **Shirley Camila Meneses Burgos** | Responsable de documentación y requisitos. | Actas, reporte de visión, especificación de requisitos, manual de usuario. |
+| **Víctor Manuel Montoya Escobar** | Desarrollo del algoritmo principal y lógica de reservas. | Código fuente (`src`), validaciones, gestión de asientos y facturación. |
+| **Sebastian Mercado Miranda** | Pruebas, validaciones y reportes administrativos. | Testing, revisión de código, reportes del módulo administrador. |
+
+
+## 4. Plazos de entrega
+- **Semana 8:** Entrega 1; Puntos 1 al 7 (integrantes, vínculos, nombre del proyecto, licencia, visión, requisitos, plan de proyecto).  
+- **Semana 16:** Entrega 2 → Entregables finales, código completo, manual de usuario y sustentación.  
+
+## 5. Criterios de evaluación interna
+- Cumplimiento de las tareas en el tiempo establecido.  
+- Calidad del trabajo entregado (documentación clara y código funcional).  
+- Participación en las reuniones y colaboración activa.  
+- Uso del repositorio de GitHub como herramienta central de trabajo.  
+
+
+## 6. Validación
+Cada integrante declara haber leído y aceptado las responsabilidades descritas en esta acta.
+
+| Integrante      |                Firma                            |
+|-------------------|---------------------------------------------|
+| Integrante 1   |Julio Cesar Mercado Negrete       |
+| Integrante 2   |Shirley Camila Meneses Burgos   |
+| Integrante 3   |Víctor Manuel Montoya Escobar   |
+| Integrante 4   |Sebastian Mercado Miranda         |
