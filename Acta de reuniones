@@ -1,1 +1,60 @@
+# Acta de Reunión
+
+**Proyecto:** Cine Universitario
+**Universidad de Antioquia 2025-2 – Facultad de Ingeniería**
+**Curso:** Algoritmia y Programación
+**Profesor:** John Heider Dávila
+
+
+
+## 1. Objetivo de la reunión
+
+Definir los lineamientos generales del proyecto, acordar los roles de cada integrante, establecer el plan de trabajo y organizar los primeros entregables (1 al 7).
+
+
+
+## 2. Temas tratados
+
+* Selección del nombre y objetivos del proyecto.
+* Revisión de los entregables iniciales y su distribución.
+* Asignación de roles y responsabilidades específicas.
+* Establecimiento de mecanismos de comunicación y reuniones periódicas.
+
+---
+
+## 3. Asignación de responsabilidades
+
+| Integrante                        | Rol / Responsabilidad principal                         | Entregables asociados                                                     |
+| --------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------- |
+| **Julio César Mercado Negrete**   | Líder de proyecto, encargado de GitHub y versionado     | Repositorio, plan de versionado, integración de entregables               |
+| **Shirley Camila Meneses Burgos** | Responsable de documentación y requisitos               | Actas, informe de visión, especificación de requisitos, manual de usuario |
+| **Víctor Manuel Montoya Escobar** | Desarrollo del algoritmo principal y lógica de reservas | Código fuente (`src`), validaciones, gestión de asientos y facturación    |
+| **Sebastián Mercado Miranda**     | Pruebas, validaciones e informes administrativos        | Pruebas, revisión de código, reportes del módulo administrador            |
+
+---
+
+## 4. Acuerdos
+
+* Reuniones de seguimiento semanales para revisar avances.
+* Todos los integrantes deben participar activamente en las entregas.
+* Comunicación oficial por grupo de WhatsApp y correo institucional.
+* Subida de avances al repositorio antes de cada reunión de control.
+
+
+**Firmas de los integrantes:**
+
+
+
+Julio César Mercado Negrete
+
+
+
+Shirley Camila Meneses Burgos
+
+
+
+Víctor Manuel Montoya Escobar
+
+
+Sebastián Mercado Miranda
 
