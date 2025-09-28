@@ -1,0 +1,7 @@
+# 🎥 Nombre del Proyecto
+**Cinema Universitario – Cine UdeA**
+
+El proyecto consiste en desarrollar un sistema de gestión para el Cinema Universitario de la UdeA.  
+Permite registrar usuarios, realizar y cancelar reservas, generar facturas, consultar películas y administrar reportes.  
+
+Objetivo: Crear un programa de consola en Python con programación orientada a objetos (POO), exportando resultados en archivos CSV.CSV.
