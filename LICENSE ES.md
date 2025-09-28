@@ -6,7 +6,7 @@ La versión oficial y legalmente vinculante es la redactada en inglés en el arc
 
 MIT License
 
-Copyright (c) 2025 Víctor Montoya, Julio Mercado, Shirley Meneses, Sebastián Mercado
+Copyright (c) 2025 [Víctor Montoya], [Julio Mercado], [Shirley Meneses], [Sebastián Mercado]
 
 Por la presente se concede permiso, libre de cargos, a cualquier persona que obtenga una copia
 de este software y de los archivos de documentación asociados (el "Software"), para usar el
