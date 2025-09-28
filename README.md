@@ -22,3 +22,19 @@ El proyecto consiste en desarrollar un sistema de gestión para el Cinema Univer
 Permite registrar usuarios, realizar y cancelar reservas, generar facturas, consultar películas y administrar reportes.  
 
  Objetivo: Crear un programa de consola en Python con programación orientada a objetos (POO), exportando resultados en archivos CSV.
+
+
+# 🌟 Reporte de Visión
+
+El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universitaria un espacio de entretenimiento accesible, organizado y automatizado mediante un sistema desarrollado en Python.
+
+### Objetivos
+- Simplificar el proceso de registro y reservas.
+- Garantizar la confiabilidad en el manejo de asientos.
+- Generar reportes administrativos útiles.
+- Mejorar la experiencia de usuario con una interfaz de consola amigable.
+
+### Beneficios
+- Ahorro de tiempo en procesos de reserva.
+- Mayor control administrativo del cine.
+- Inclusión de distintos tipos de usuarios (estudiantes, docentes, externos).
