@@ -14,3 +14,11 @@ Cursa Ingeniería Industrial en la Universidad de Antioquia. Posee conocimientos
 
 **Sebastián Mercado Miranda**
 Estudiante de Ingeniería Industrial en la Universidad de Antioquia. Su enfoque está en la validación de resultados y el aseguramiento de la calidad. Se caracteriza por sus habilidades en la revisión de código, realización de pruebas y elaboración de reportes administrativos. Su pensamiento crítico y atención al detalle fortalecen la confiabilidad del producto final.
+
+# 🎥 Nombre del Proyecto
+**Cinema Universitario – Cine UdeA**
+
+El proyecto consiste en desarrollar un sistema de gestión para el Cinema Universitario de la UdeA.  
+Permite registrar usuarios, realizar y cancelar reservas, generar facturas, consultar películas y administrar reportes.  
+
+ Objetivo: Crear un programa de consola en Python con programación orientada a objetos (POO), exportando resultados en archivos CSV.
