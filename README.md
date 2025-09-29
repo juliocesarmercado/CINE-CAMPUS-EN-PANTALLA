@@ -39,6 +39,30 @@ El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universit
 - Mayor control administrativo del cine.
 - Inclusión de distintos tipos de usuarios (estudiantes, docentes, externos).
 
+
+# 📅 Plan de Proyecto
+
+## Actividades principales
+1. Definición de requerimientos y diseño (Semana 1–3).
+2. Creación de clases y estructura base del código (Semana 4–6).
+3. Validaciones de usuarios y reservas (Semana 6–7).
+4. Integración de reportes y pruebas iniciales (Semana 7–8).
+5. Entrega 1 (Semana 8).
+
+## Cronograma (Diagrama de Gantt simplificado)
+| Actividad                       | Semana 1 | Semana 2 | Semana 3 | Semana 4 | Semana 5 | Semana 6 | Semana 7 | Semana 8 |
+|---------------------------------|----------|----------|----------|----------|----------|----------|----------|----------|
+| Recolección de requisitos       |   ✔️     |   ✔️     |          |          |          |          |          |          |
+| Diseño de clases y estructura   |          |          |   ✔️     |   ✔️     |          |          |          |          |
+| Desarrollo de funcionalidades   |          |          |          |   ✔️     |   ✔️     |   ✔️     |          |          |
+| Validaciones y pruebas iniciales|          |          |          |          |          |   ✔️     |   ✔️     |          |
+| Preparación de Entregable 1     |          |          |          |          |          |          |   ✔️     |   ✔️     |
+
+## Presupuesto (Horas de práctica)
+- Total de integrantes: 4 estudiantes.  
+- Tiempo estimado: 50 horas en conjunto.  
+- Equivalencia: 1 SMLV en valor de práctica profesional.
+
  **LICENCIA**
 -#Copyright (c) 2025 [Víctor Montoya], [Julio Mercado], [Shirley Meneses], [Sebastián Mercado]
 
