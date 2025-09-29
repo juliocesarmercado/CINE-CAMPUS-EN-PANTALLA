@@ -38,3 +38,5 @@ El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universit
 - Ahorro de tiempo en procesos de reserva.
 - Mayor control administrativo del cine.
 - Inclusión de distintos tipos de usuarios (estudiantes, docentes, externos).
+
+- ###LICENCIA
