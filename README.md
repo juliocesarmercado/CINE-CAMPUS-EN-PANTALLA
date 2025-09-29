@@ -39,8 +39,8 @@ El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universit
 - Mayor control administrativo del cine.
 - Inclusión de distintos tipos de usuarios (estudiantes, docentes, externos).
 
-- ###LICENCIA
-- #Copyright (c) 2025 [Víctor Montoya], [Julio Mercado], [Shirley Meneses], [Sebastián Mercado]
+- **LICENCIA**
+#Copyright (c) 2025 [Víctor Montoya], [Julio Mercado], [Shirley Meneses], [Sebastián Mercado]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
