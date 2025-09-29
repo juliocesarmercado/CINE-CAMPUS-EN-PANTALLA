@@ -63,8 +63,10 @@ El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universit
 - Tiempo estimado: 50 horas en conjunto.  
 - Equivalencia: 1 SMLV en valor de práctica profesional.
 
- **LICENCIA**
--#Copyright (c) 2025 [Víctor Montoya], [Julio Mercado], [Shirley Meneses], [Sebastián Mercado]
+  
+
+# LICENCIA
+##Copyright (c) 2025 [Víctor Montoya], [Julio Mercado], [Shirley Meneses], [Sebastián Mercado]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
