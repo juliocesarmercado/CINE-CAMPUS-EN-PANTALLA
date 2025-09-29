@@ -39,6 +39,23 @@ El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universit
 - Mayor control administrativo del cine.
 - Inclusión de distintos tipos de usuarios (estudiantes, docentes, externos).
 
+# 📋 Especificación de Requisitos
+
+## Requisitos funcionales
+- Registrar usuarios con validaciones (nombre, documento, vínculo).
+- Consultar disponibilidad de películas del fin de semana.
+- Crear y cancelar reservas de asientos.
+- Generar factura de cada compra.
+- Reportes administrativos: ingresos, reservas, usuario con más reservas.
+- Exportar datos en formato CSV.
+
+## Requisitos no funcionales
+- **Usabilidad:** interfaz clara en consola.
+- **Fiabilidad:** manejo de errores en entradas inválidas.
+- **Rendimiento:** respuesta rápida en consultas.
+- **Compatibilidad:** ejecutable en cualquier sistema con Python 3.10+.
+- **Seguridad:** acceso restringido para administrador con usuario/contraseña.
+
 
 # 📅 Plan de Proyecto
 
