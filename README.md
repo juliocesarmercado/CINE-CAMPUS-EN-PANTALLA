@@ -3,10 +3,10 @@ Proyecto final de Algoritmia y Programación 2025-2 – Universidad de Antioquia
 
 ## Integrantes
 
-**Julio César Mercado Negrete**
-**Shirley Camila Meneses Burgos**
-**Víctor Manuel Montoya Escobar**
-**Sebastián Mercado Miranda**
+**Julio César Mercado Negrete**;
+**Shirley Camila Meneses Burgos**;
+**Víctor Manuel Montoya Escobar**;
+**Sebastián Mercado Miranda**;
 .
 ## Vínculos académicos
 
