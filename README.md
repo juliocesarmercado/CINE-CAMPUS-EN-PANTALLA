@@ -36,6 +36,10 @@ El proyecto consiste en desarrollar un sistema de gestión para el Cinema Univer
 Permite registrar usuarios, realizar y cancelar reservas, generar facturas, consultar películas y administrar reportes.  
 
  Objetivo: Crear un programa de consola en Python con programación orientada a objetos (POO), exportando resultados en archivos CSV.
+ 
+## **Logo**
+
+ https://drive.google.com/file/d/1PLeiR08gyXYfxeMt1KuXSbv3oE18iMxm/view?usp=drivesdk
 
  
 
