@@ -1,7 +1,7 @@
 # CINEMA CAMPUS EN PANTALLA
 Proyecto final de Algoritmia y Programación 2025-2 – Universidad de Antioquia.  Sistema de gestión para el Cinema Universitario que permite registrar usuarios,  realizar y cancelar reservas de asientos, consultar funciones, generar facturas  y obtener reportes administrativos. Desarrollado en Python con POO y exportación a CSV..
 .
-## 2. Vínculos académicos
+## Vínculos académicos
 
 **Julio César Mercado Negrete**
 Pertenece al programa de Ingeniería Industrial de la Universidad de Antioquia. Se destaca por sus habilidades en la gestión de proyectos y la coordinación de equipos de trabajo. Maneja herramientas de control de versiones como GitHub, además de contar con fortalezas en planificación, organización de tareas y liderazgo técnico.
@@ -15,6 +15,7 @@ Cursa Ingeniería Industrial en la Universidad de Antioquia. Posee conocimientos
 **Sebastián Mercado Miranda**
 Estudiante de Ingeniería Industrial en la Universidad de Antioquia. Su enfoque está en la validación de resultados y el aseguramiento de la calidad. Se caracteriza por sus habilidades en la revisión de código, realización de pruebas y elaboración de reportes administrativos. Su pensamiento crítico y atención al detalle fortalecen la confiabilidad del producto final.
 
+
 # 🎥 Nombre del Proyecto
 **Cinema Universitario – Cine UdeA**
 
@@ -22,6 +23,27 @@ El proyecto consiste en desarrollar un sistema de gestión para el Cinema Univer
 Permite registrar usuarios, realizar y cancelar reservas, generar facturas, consultar películas y administrar reportes.  
 
  Objetivo: Crear un programa de consola en Python con programación orientada a objetos (POO), exportando resultados en archivos CSV.
+
+ # LICENCIA
+##Copyright (c) 2025 [Víctor Montoya], [Julio Mercado], [Shirley Meneses], [Sebastián Mercado]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 
 # 🌟 Reporte de Visión
@@ -38,6 +60,7 @@ El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universit
 - Ahorro de tiempo en procesos de reserva.
 - Mayor control administrativo del cine.
 - Inclusión de distintos tipos de usuarios (estudiantes, docentes, externos).
+  
 
 # 📋 Especificación de Requisitos
 
@@ -82,23 +105,3 @@ El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universit
 
   
 
-# LICENCIA
-##Copyright (c) 2025 [Víctor Montoya], [Julio Mercado], [Shirley Meneses], [Sebastián Mercado]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
