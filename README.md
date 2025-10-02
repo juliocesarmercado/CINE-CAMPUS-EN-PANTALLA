@@ -27,6 +27,8 @@ Cursa Ingeniería Industrial en la Universidad de Antioquia. Posee conocimientos
 Estudiante de Ingeniería Industrial en la Universidad de Antioquia. Su enfoque está en la validación de resultados y el aseguramiento de la calidad. Se caracteriza por sus habilidades en la revisión de código, realización de pruebas y elaboración de reportes administrativos. Su pensamiento crítico y atención al detalle fortalecen la confiabilidad del producto final.
 
 
+
+
 # 🎥 Nombre del Proyecto
 **Cinema Universitario – Cine UdeA**
 
@@ -34,6 +36,8 @@ El proyecto consiste en desarrollar un sistema de gestión para el Cinema Univer
 Permite registrar usuarios, realizar y cancelar reservas, generar facturas, consultar películas y administrar reportes.  
 
  Objetivo: Crear un programa de consola en Python con programación orientada a objetos (POO), exportando resultados en archivos CSV.
+
+ 
 
  # LICENCIA
 ##Copyright (c) 2025 [Víctor Montoya], [Julio Mercado], [Shirley Meneses], [Sebastián Mercado]
@@ -57,6 +61,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+
+
 # 🌟 Reporte de Visión
 
 El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universitaria un espacio de entretenimiento accesible, organizado y automatizado mediante un sistema desarrollado en Python.
@@ -71,6 +77,8 @@ El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universit
 - Ahorro de tiempo en procesos de reserva.
 - Mayor control administrativo del cine.
 - Inclusión de distintos tipos de usuarios (estudiantes, docentes, externos).
+
+  
   
 
 # 📋 Especificación de Requisitos
@@ -89,6 +97,8 @@ El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universit
 - **Rendimiento:** respuesta rápida en consultas.
 - **Compatibilidad:** ejecutable en cualquier sistema con Python 3.10+.
 - **Seguridad:** acceso restringido para administrador con usuario/contraseña.
+
+  
 
 
 # 📅 Plan de Proyecto
