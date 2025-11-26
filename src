@@ -1,0 +1,390 @@
+from dataclasses import dataclass, field
+from typing import List, Dict, Optional
+
+# Precios por tipo de vínculo según el enunciado
+TIPOS_VINCULO = {
+    "Estudiantes": 7500,
+    "Docentes": 10000,
+    "Administrativos": 8500,
+    "Oficiales internos": 7000,
+    "Publico externo": 15000,  # sin tilde para evitar problemas de entrada
+}
+
+# Orden para mostrar los días del fin de semana
+DIAS_ORDEN = {"Viernes": 1, "Sabado": 2, "Domingo": 3}
+
+
+@dataclass
+class Usuario:
+    nombre: str
+    apellido: str
+    documento: str
+    tipo_vinculo: str
+
+    @staticmethod
+    def validar_nombre(valor: str) -> Optional[str]:
+        if len(valor.strip()) < 3:
+            return "Debe tener al menos 3 letras."
+        if any(ch.isdigit() for ch in valor):
+            return "No puede contener números."
+        return None
+
+    @staticmethod
+    def validar_documento(valor: str) -> Optional[str]:
+        if not valor.isdigit():
+            return "El documento solo puede contener números."
+        if not (3 <= len(valor) <= 15):
+            return "El documento debe tener entre 3 y 15 dígitos."
+        return None
+
+    @staticmethod
+    def validar_tipo_vinculo(valor: str) -> Optional[str]:
+        if valor not in TIPOS_VINCULO:
+            return f"Tipo de vínculo inválido. Debe ser uno de: {', '.join(TIPOS_VINCULO.keys())}"
+        return None
+
+
+@dataclass
+class Funcion:
+    id_funcion: int
+    pelicula: str
+    dia: str  # Viernes, Sabado, Domingo
+    hora: str  # HH:MM
+    sala: str
+    asientos: List[List[str]] = field(default_factory=list)
+
+    def __post_init__(self):
+        if not self.asientos:
+            # 11x11 llenos de "O" (asientos disponibles)
+            self.asientos = [["O" for _ in range(11)] for _ in range(11)]
+
+    def mostrar_asientos(self):
+        print(f"\nSala {self.sala} - {self.pelicula} ({self.dia} {self.hora})")
+        print("    " + " ".join(f"{j+1:2d}" for j in range(11)))
+        for i, fila in enumerate(self.asientos):
+            print(f"{chr(65+i)} | " + " ".join(fila))
+
+    def asiento_disponible(self, fila: int, col: int) -> bool:
+        return self.asientos[fila][col] == "O"
+
+    def reservar_asiento(self, fila: int, col: int) -> bool:
+        if self.asiento_disponible(fila, col):
+            self.asientos[fila][col] = "X"
+            return True
+        return False
+
+    def cancelar_asiento(self, fila: int, col: int) -> bool:
+        if self.asientos[fila][col] == "X":
+            self.asientos[fila][col] = "O"
+            return True
+        return False
+
+    def asientos_disponibles(self) -> int:
+        return sum(1 for fila in self.asientos for asiento in fila if asiento == "O")
+
+
+@dataclass
+class Reserva:
+    id_reserva: int
+    usuario_doc: str
+    funcion_id: int
+    fila: int
+    col: int
+    precio: int
+
+
+class Cinema:
+    def __init__(self, nombre: str):
+        self.nombre = nombre
+        self.usuarios: Dict[str, Usuario] = {}
+        self.funciones: Dict[int, Funcion] = {}
+        self.reservas: Dict[int, Reserva] = {}
+        self.siguiente_id_reserva = 1
+        self._cargar_funciones_demo()
+
+    def _cargar_funciones_demo(self):
+        # Estas funciones son de ejemplo, el profesor puede cambiar el listado real
+        self.funciones[1] = Funcion(1, "Interestelar", "Viernes", "18:00", "Sala 1")
+        self.funciones[2] = Funcion(2, "Matrix", "Sabado", "16:00", "Sala 1")
+        self.funciones[3] = Funcion(3, "El viaje de Chihiro", "Domingo", "15:00", "Sala 2")
+
+    # --- Gestión de usuarios ---
+
+    def registrar_usuario(self):
+        print("\n--- Registro de usuario ---")
+        nombre = input("Nombre: ").strip()
+        apellido = input("Apellido: ").strip()
+        documento = input("Documento: ").strip()
+
+        print("\nTipos de vínculo disponibles:")
+        for t, precio in TIPOS_VINCULO.items():
+            print(f" - {t} → ${precio}")
+        tipo_vinculo = input("Tipo de vínculo: ").strip()
+
+        errores = []
+        e = Usuario.validar_nombre(nombre)
+        if e: errores.append(f"Nombre: {e}")
+        e = Usuario.validar_nombre(apellido)
+        if e: errores.append(f"Apellido: {e}")
+        e = Usuario.validar_documento(documento)
+        if e: errores.append(f"Documento: {e}")
+        e = Usuario.validar_tipo_vinculo(tipo_vinculo)
+        if e: errores.append(f"Tipo de vínculo: {e}")
+
+        if errores:
+            print("\nSe encontraron los siguientes errores:")
+            for err in errores:
+                print(" -", err)
+            return
+
+        if documento in self.usuarios:
+            print("Ya existe un usuario con ese documento.")
+            return
+
+        self.usuarios[documento] = Usuario(nombre, apellido, documento, tipo_vinculo)
+        print("\nUsuario registrado correctamente.")
+
+    def _seleccionar_usuario(self) -> Optional[Usuario]:
+        doc = input("Ingrese el documento del usuario: ").strip()
+        usuario = self.usuarios.get(doc)
+        if not usuario:
+            print("No existe un usuario con ese documento.")
+            return None
+        return usuario
+
+    # --- Gestión de reservas ---
+
+    def registrar_reserva(self):
+        print("\n--- Registrar reserva ---")
+        usuario = self._seleccionar_usuario()
+        if not usuario:
+            print("Debe registrar el usuario antes de reservar.")
+            return
+
+        funcion = self._seleccionar_funcion()
+        if not funcion:
+            return
+
+        funcion.mostrar_asientos()
+        cod = input("Seleccione asiento (ejemplo A1, C10): ").upper().strip()
+        if len(cod) < 2:
+            print("Formato inválido.")
+            return
+
+        fila_letra = cod[0]
+        num_str = cod[1:]
+        if not num_str.isdigit():
+            print("Formato inválido.")
+            return
+
+        fila = ord(fila_letra) - 65
+        col = int(num_str) - 1
+
+        if not (0 <= fila < 11 and 0 <= col < 11):
+            print("Asiento fuera de rango.")
+            return
+
+        if not funcion.reservar_asiento(fila, col):
+            print("El asiento no está disponible.")
+            return
+
+        precio = TIPOS_VINCULO[usuario.tipo_vinculo]
+        reserva = Reserva(self.siguiente_id_reserva, usuario.documento, funcion.id_funcion, fila, col, precio)
+        self.reservas[self.siguiente_id_reserva] = reserva
+        self.siguiente_id_reserva += 1
+
+        print("\nReserva realizada con éxito.")
+        print(f"Usuario: {usuario.nombre} {usuario.apellido}")
+        print(f"Película: {funcion.pelicula}")
+        print(f"Asiento: {fila_letra}{col+1}")
+        print(f"Valor a pagar: ${precio}")
+
+    def _seleccionar_funcion(self) -> Optional[Funcion]:
+        print("\nFunciones disponibles:")
+        for f in sorted(self.funciones.values(),
+                        key=lambda x: (DIAS_ORDEN.get(x.dia, 99), x.hora, x.pelicula)):
+            print(
+                f"{f.id_funcion}. {f.pelicula} - {f.dia} {f.hora} - "
+                f"{f.sala} - Asientos libres: {f.asientos_disponibles()}"
+            )
+        try:
+            opcion = int(input("Seleccione el id de la función: "))
+        except ValueError:
+            print("Opción inválida.")
+            return None
+
+        funcion = self.funciones.get(opcion)
+        if not funcion:
+            print("Función no encontrada.")
+            return None
+        return funcion
+
+    def cancelar_reserva(self):
+        print("\n--- Cancelar reserva ---")
+        usuario = self._seleccionar_usuario()
+        if not usuario:
+            return
+
+        reservas_usuario = [r for r in self.reservas.values() if r.usuario_doc == usuario.documento]
+        if not reservas_usuario:
+            print("El usuario no tiene reservas activas.")
+            return
+
+        print("\nReservas activas:")
+        for r in reservas_usuario:
+            f = self.funciones[r.funcion_id]
+            asiento = f"{chr(65+r.fila)}{r.col+1}"
+            print(f"{r.id_reserva}. {f.pelicula} - {f.dia} {f.hora} - {asiento} - ${r.precio}")
+
+        try:
+            rid = int(input("Ingrese el id de la reserva a cancelar: "))
+        except ValueError:
+            print("Opción inválida.")
+            return
+
+        reserva = self.reservas.get(rid)
+        if not reserva or reserva.usuario_doc != usuario.documento:
+            print("Reserva no encontrada.")
+            return
+
+        funcion = self.funciones[reserva.funcion_id]
+        funcion.cancelar_asiento(reserva.fila, reserva.col)
+        del self.reservas[rid]
+        print("Reserva cancelada correctamente.")
+
+    # --- Consultar funciones ---
+
+    def consultar_funciones(self):
+        print("\n--- Funciones del fin de semana ---")
+        for f in sorted(self.funciones.values(),
+                        key=lambda x: (DIAS_ORDEN.get(x.dia, 99), x.hora, x.pelicula)):
+            print(
+                f"- {f.dia} {f.hora} | {f.pelicula} | {f.sala} | "
+                f"Asientos libres: {f.asientos_disponibles()}"
+            )
+
+    # --- Módulo administrador ---
+
+    def menu_admin(self):
+        print("\n--- Acceso administrador ---")
+        usuario = input("Usuario admin: ").strip()
+        clave = input("Contraseña: ").strip()
+
+        # Credenciales de ejemplo. Pueden cambiarse o hacerse configurables.
+        if not (usuario == "admin" and clave == "admin123"):
+            print("Credenciales inválidas.")
+            return
+
+        while True:
+            print("\n--- Menú administrador ---")
+            print("1. Ver resumen de ventas")
+            print("2. Lista de usuarios")
+            print("3. Usuario con más y menos reservas")
+            print("4. Volver al menú principal")
+            op = input("Seleccione una opción: ").strip()
+
+            if op == "1":
+                self._reporte_ventas()
+            elif op == "2":
+                self._listar_usuarios()
+            elif op == "3":
+                self._usuarios_extremos()
+            elif op == "4":
+                break
+            else:
+                print("Opción inválida.")
+
+    def _reporte_ventas(self):
+        total_reservas = len(self.reservas)
+        total_tiquetes = total_reservas  # 1 tiquete por reserva
+        total_pago = sum(r.precio for r in self.reservas.values())
+
+        # promedio diario por día con al menos una reserva
+        pagos_por_dia: Dict[str, int] = {}
+        for r in self.reservas.values():
+            f = self.funciones[r.funcion_id]
+            pagos_por_dia.setdefault(f.dia, 0)
+            pagos_por_dia[f.dia] += r.precio
+
+        promedio_diario = (
+            sum(pagos_por_dia.values()) / len(pagos_por_dia)
+            if pagos_por_dia else 0
+        )
+
+        print("\n--- Reporte de ventas ---")
+        print(f"Total de reservas registradas: {total_reservas}")
+        print(f"Total de tiquetes vendidos: {total_tiquetes}")
+        print(f"Total pago realizado: ${total_pago}")
+        print(f"Promedio por venta diario del cine: ${promedio_diario:.2f}")
+
+    def _listar_usuarios(self):
+        print("\n--- Lista de usuarios ---")
+        if not self.usuarios:
+            print("No hay usuarios registrados.")
+            return
+
+        for u in self.usuarios.values():
+            print(f"- {u.documento}: {u.nombre} {u.apellido} ({u.tipo_vinculo})")
+
+    def _usuarios_extremos(self):
+        if not self.reservas:
+            print("No hay reservas registradas.")
+            return
+
+        conteo: Dict[str, int] = {}
+        for r in self.reservas.values():
+            conteo.setdefault(r.usuario_doc, 0)
+            conteo[r.usuario_doc] += 1
+
+        max_res = max(conteo.values())
+        min_res = min(conteo.values())
+        usuarios_max = [self.usuarios[doc] for doc, c in conteo.items() if c == max_res]
+        usuarios_min = [self.usuarios[doc] for doc, c in conteo.items() if c == min_res]
+
+        print("\nUsuario(s) con mayor cantidad de reservas:")
+        for u in usuarios_max:
+            print(f"- {u.nombre} {u.apellido} ({u.documento}) con {conteo[u.documento]} reservas")
+
+        print("\nUsuario(s) con menor cantidad de reservas:")
+        for u in usuarios_min:
+            print(f"- {u.nombre} {u.apellido} ({u.documento}) con {conteo[u.documento]} reservas")
+
+    # --- Menú principal ---
+
+    def ejecutar(self):
+        while True:
+            print(f"\n=== Cinema {self.nombre} ===")
+            print("1. Registrar Usuario")
+            print("2. Registrar Reserva")
+            print("3. Cancelar Reserva")
+            print("4. Consultar Funciones Fin de Semana")
+            print("5. Administrador")
+            print("6. Salir")
+
+            opcion = input("Seleccione una opción: ").strip()
+
+            if opcion == "1":
+                self.registrar_usuario()
+            elif opcion == "2":
+                self.registrar_reserva()
+            elif opcion == "3":
+                self.cancelar_reserva()
+            elif opcion == "4":
+                self.consultar_funciones()
+            elif opcion == "5":
+                self.menu_admin()
+            elif opcion == "6":
+                print("¡Gracias por usar el sistema del cinema!")
+                break
+            else:
+                print("Opción inválida.")
+
+
+def main():
+    nombre = "Universitario UdeA"
+    cinema = Cinema(nombre)
+    cinema.ejecutar()
+
+
+if __name__ == "__main__":
+    main()
