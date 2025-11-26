@@ -129,4 +129,34 @@ El **Cinema Universitario – Cine UdeA** busca ofrecer a la comunidad universit
 - Equivalencia: 1 SMLV en valor de práctica profesional.
 
   
+# Plan de versionado
 
+Este documento describe las versiones del software y su avance a lo largo del proyecto, desde el inicio hasta la entrega final.  
+Se usa un esquema de versionado semántico: **Mayor.Menor.Parche**.
+
+## Convenciones
+
+- **Versión Mayor (X.0.0)**: Cambios grandes en el sistema, nuevas funcionalidades principales o reestructuración del código.
+- **Versión Menor (0.X.0)**: Nuevas funcionalidades que no rompen lo anterior.
+- **Versión Parche (0.0.X)**: Correcciones de errores y ajustes menores.
+
+## Historial de versiones
+
+| Versión | Fecha (estimada) | Descripción                                                      | Responsable(s) |
+|--------:|------------------|------------------------------------------------------------------|----------------|
+| 0.1.0   | 2025-09-01       | Creación del repositorio, definición de visión y requisitos.    | Equipo completo |
+| 0.2.0   | 2025-09-08       | Diseño de clases (Usuario, Función, Reserva, Cinema).           | Equipo completo |
+| 0.3.0   | 2025-09-15       | Implementación del registro de usuarios y consulta de funciones.| Dev 1 – Dev 2  |
+| 0.4.0   | 2025-09-22       | Módulo de reservas y cancelación de reservas.                   | Dev 2 – Dev 3  |
+| 0.5.0   | 2025-09-29       | Módulo de administrador y generación de reportes.               | Dev 1 – Dev 3  |
+| 0.6.0   | 2025-10-06       | Pruebas, corrección de errores, mejora de mensajes al usuario.  | Equipo completo |
+| 1.0.0   | 2025-10-13       | Versión final para entrega: código, documentación y manual.     | Equipo completo |
+
+## Regla de actualización
+
+Cada vez que se complete una tarea relevante:
+
+1. Se actualiza la versión según el tipo de cambio.
+2. Se registra la nueva versión en esta tabla.
+3. Se añade un mensaje de commit en GitHub incluyendo la versión, por ejemplo:  
+   `feat: agrega módulo de administrador (v0.5.0)`.
