@@ -1,1 +1,21 @@
+# Manual de Usuario – Cinema Universitario
 
+## 1. Introducción
+
+Este manual describe el uso del programa de consola desarrollado en Python para gestionar el
+*Cinema Universitario (insertar nombre)*.  
+El sistema permite registrar usuarios, realizar reservas, cancelar reservas, consultar funciones del
+fin de semana y generar reportes mediante un módulo de administrador.
+
+## 2. Requisitos
+
+- Python 3 instalado.
+- Sistema operativo Windows, Linux o macOS.
+- Acceso a una terminal o consola de comandos.
+
+## 3. Ejecución del programa
+
+1. Abrir una terminal en la carpeta raíz del proyecto.
+2. Posicionarse en la carpeta src:
+   ```bash
+   cd src
