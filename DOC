@@ -19,3 +19,112 @@ fin de semana y generar reportes mediante un módulo de administrador.
 2. Posicionarse en la carpeta src:
    ```bash
    cd src
+
+Se mostrará el menú principal del cinema en la consola.
+4. Menú principal
+Al iniciar el programa se muestra:
+Registrar Usuario
+Registrar Reserva
+Cancelar Reserva
+Consultar Funciones Fin de Semana
+Administrador
+Salir
+El usuario debe escribir el número de la opción deseada y presionar Enter.
+
+5. Registrar Usuario
+Permite crear un nuevo usuario en el sistema.
+El programa solicitará:
+Nombre (mínimo 3 letras, sin números)
+
+
+Apellido (mínimo 3 letras, sin números)
+
+
+Documento (entre 3 y 15 dígitos, solo números)
+
+
+Tipo de vínculo, una de las siguientes opciones:
+
+
+Estudiantes
+Docentes
+Administrativos
+Oficiales internos
+Publico externo
+Si existe algún error en la información ingresada, el sistema mostrará un listado de los errores para que el usuario pueda corregirlos.
+
+6. Registrar Reserva
+Solo se pueden registrar reservas para usuarios ya registrados.
+Pasos:
+El sistema pide el documento del usuario.
+Si el usuario existe, se muestran las funciones disponibles (día, hora, nombre, sala y asientos libres).
+El usuario selecciona el id de la función.
+El sistema muestra la matriz de asientos (fila A–K, columnas 1–11) con:
+O → asiento disponible
+X → asiento reservado
+El usuario ingresa el asiento en formato, por ejemplo: A1, C10.
+Si el asiento está disponible, se realiza la reserva y se muestra:
+Datos del usuario
+Película
+Asiento
+Valor a pagar según el tipo de vínculo
+Cada reserva corresponde a un solo asiento.
+
+7. Cancelar Reserva
+Permite cancelar una reserva existente.
+Pasos:
+El sistema pide el documento del usuario.
+Si el usuario tiene reservas activas, se listan todas sus reservas con:
+Id de reserva
+Película
+Día y hora
+Asiento
+Valor
+El usuario ingresa el id de la reserva que desea cancelar.
+El sistema cambia el asiento de X a O y elimina la reserva de la lista.
+Si el usuario no tiene reservas activas, el sistema muestra un mensaje informativo.
+
+8. Consultar Funciones del Fin de Semana
+Muestra todas las funciones disponibles ordenadas por:
+Día (Viernes, Sábado, Domingo)
+Hora
+Nombre de la película
+Para cada función se muestra:
+Día y hora
+Nombre de la película
+Sala
+Número de asientos libres
+Esta opción es solo de consulta; no realiza reservas.
+
+9. Módulo Administrador
+Solo permite el acceso a usuarios con credenciales válidas.
+El sistema solicita:
+
+
+Usuario de administrador
+Contraseña
+Si las credenciales son correctas, se muestra el siguiente submenú:
+
+
+Ver resumen de ventas
+Lista de usuarios
+Usuario con más y menos reservas
+Volver al menú principal
+9.1. Ver resumen de ventas
+Muestra:
+Total de reservas registradas
+Total de tiquetes vendidos
+Total pago realizado
+Promedio de venta diaria (promedio sobre los días con ventas registradas)
+9.2. Lista de usuarios
+Lista todos los usuarios registrados con:
+Documento
+Nombre y apellido
+Tipo de vínculo
+9.3. Usuario con más y menos reservas
+Calcula y muestra:
+Usuario(s) con mayor número de reservas
+Usuario(s) con menor número de reservas
+
+10. Salir del programa
+Desde el menú principal, al elegir la opción 6. Salir, el sistema finaliza la ejecución y vuelve a la consola
