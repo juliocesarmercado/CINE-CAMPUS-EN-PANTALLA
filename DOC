@@ -3,7 +3,7 @@
 ## 1. Introducción
 
 Este manual describe el uso del programa de consola desarrollado en Python para gestionar el
-*Cinema Universitario (insertar nombre)*.  
+*Cinema Universitario CINEMA UDEA*.  
 El sistema permite registrar usuarios, realizar reservas, cancelar reservas, consultar funciones del
 fin de semana y generar reportes mediante un módulo de administrador.
 
